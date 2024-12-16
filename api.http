@@ -1,0 +1,26 @@
+GET http://localhost:3000/places?text=av coronel teixeira, manaus, 6225
+###
+GET http://localhost:3000/places?text= av djalma batista, manaus, 1750
+###
+@originId = ChIJI40ch0sQbJIRFV7lrONzzZQ
+@destinationId =ElBBdi4gRGphbG1hIEJhdGlzdGEsIDE3NTAgLSBOb3NzYSBTcmEuIGRhcyBHcmFjYXMsIE1hbmF1cyAtIEFNLCA2OTA1MC0wMTAsIEJyYXNpbCIxEi8KFAoSCU1nlVuqGmySEeWguKlZ0DpXENYNKhQKEgkN0oHdpxpskhEFWzpt4eNwAA
+###
+
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{destinationId}}
+
+###
+
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 02",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+
+### 
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/67602caea3ce67fc4177c0ae
